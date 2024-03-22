@@ -1,0 +1,16 @@
+{
+  "name": "mixed-content-example",
+  "version": "1.0.0",
+  "description": "an example app with mixed content warnings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "anchor-pki": "^0.3.1",
+    "finalhandler": "^1.2.0",
+    "serve-static": "^2.0.0-beta.2"
+  }
+}
