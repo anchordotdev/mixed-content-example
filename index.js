@@ -12,9 +12,16 @@ var app = function (req, res) {
   serve(req, res, finalhandler(req, res))
 }
 
-http.createServer(app).listen(process.env.HTTP_PORT || 3000)
+var httpPort = (process.env.HTTP_PORT || 3000)
+var httpsPort = process.env.HTTPS_PORT
+
+http.createServer(app).listen(httpPort)
+
+console.log("mixed-content-example app over HTTP: http://localhost:"+httpPort)
 
 // Create HTTPS server if configured
-if (process.env.HTTPS_PORT) {
+if (httpsPort) {
   https.createServer(autoCert(), app).listen(process.env.HTTPS_PORT)
+
+  console.log("mixed-content-example app over HTTPS: https://mixed-content-example.lcl.host:"+httpsPort)
 }
